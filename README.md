@@ -25,7 +25,7 @@ pip install matplotlib numpy
 
 Encrypt an image:
 ```
-python src/encrypt.py /path/to/img
+python src/encrypt.py -i /path/to/img -x float(0 to 2pi) -y float(0 to 2pi) -K float(>18) -L int(11<L<1100)
 ```
 
 
