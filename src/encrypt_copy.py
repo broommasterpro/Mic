@@ -8,7 +8,7 @@ parser.add_argument('-x', '--x_0', type= float, required=True, help= 'x_0 value'
 parser.add_argument('-y', '--y_0', type= float, required=True, help= 'y_0 value')
 parser.add_argument('-K', '--K', type= float, required=True, help= 'K value(should be greater than 18)')
 parser.add_argument('-L', '--L', type= int, required=True,  help= 'L value(should be between 11 and 1100')
-parser.add_argument('-i', '--image', type= str, required=True,  help= 'Image path'
+parser.add_argument('-i', '--image', type= str, required=True,  help= 'Image path')
 args= parser.parse_args()
 image_path = args.i
 
