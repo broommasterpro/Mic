@@ -1,5 +1,6 @@
 from PIL import Image
 import numpy as np
+import pickle
 import sys
 
 image_path = sys.argv[1]
@@ -19,10 +20,28 @@ N=confusion_2_matrix.shape[1]
 
 from math import pi
 
-x_0=4
-y_0= 4
-K=83642643
-L=1000
+
+
+class Secret:
+    def __init__(self, x_0, y_0, K, L, pixel_seed):
+        self.x_0 = x_0
+        self.y_0 = y_0
+        self.K = K
+        self.L = L
+        self.pixel_seed = pixel_seed
+
+with open("secret.key", "rb") as f:
+    s = pickle.load(f)
+
+x_0= s.x_0
+y_0= s.y_0
+K=s.K
+L=s.L
+
+confusion_seed_pixel = s.pixel_seed
+
+
+
 
 x_key=np.array(
     [
@@ -84,7 +103,7 @@ for i in range(L):
 logistic_states[0]=z_0_dash
 
 for i in range(1, M*N):
-  logistic_states[i] = logistic_map(logistic_states[i-1])
+    logistic_states[i] = logistic_map(logistic_states[i-1])
 
 logistic_states
 
@@ -144,7 +163,7 @@ img.save("diffusion_revert_matrix.bmp")
 
 confusion_revert_matrix = np.zeros((M, N, 3), dtype=np.uint8)
 
-confusion_seed_pixel = np.load("confusion_seed_pixel.npy")
+#confusion_seed_pixel = np.load("confusion_seed_pixel.npy")
 
 confusion_revert_matrix[0, 0] = confusion_seed_pixel
 
