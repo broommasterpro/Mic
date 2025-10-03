@@ -2,6 +2,7 @@ from PIL import Image
 import numpy as np
 import sys
 import argparse
+import pickle
 
 parser = argparse.ArgumentParser(description= 'Input the keys')
 parser.add_argument('-x', '--x_0', type= float, required=True, help= 'x_0 value')
@@ -42,6 +43,14 @@ y_0 = args.y_0
 K = args.K
 L= args.L
 
+class Secret:
+    def __init__(self, x_0, y_0, K, L, pixel_seed):
+        self.x_0 = x_0
+        self.y_0 = y_0
+        self.K = K
+        self.L = L
+        self.pixel_seed = pixel_seed
+    
 XKey_img = np.zeros((M, N, 3), dtype=np.uint8)
 print(M, N)
 
@@ -124,7 +133,8 @@ img.save("CKS.bmp")
 
 confusion_matrix = np.zeros((M, N, 3), dtype=np.uint8)
 
-for k in range(M*N - 1):
+for k in range(M*N - 1):with open("student.dat", "wb") as f:
+    pickle.dump(s1, f)
   i = k//N
   j = (k%N)
   confusion_matrix[i,j,0] = arr[i, j, 0] ^ XKey_img[i, j, 0]
@@ -138,8 +148,10 @@ img.save("confusion_matrix.bmp")
 diffusion_matrix = np.zeros((M, N, 3), dtype=np.uint8)
 
 confusion_seed_pixel = confusion_matrix[0,0]
-np.save('confusion_seed_pixel.npy', confusion_seed_pixel)
-
+###np.save('confusion_seed_pixel.npy', confusion_seed_pixel)
+s = Secret(x_0, y_0, K, L, confusion_seed_pixel)
+with open("secret.key", "wb") as f:
+    pickle.dump(s, f)
 
 for k in range(1, M*N):
   i = k//N
