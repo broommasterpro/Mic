@@ -37,8 +37,8 @@ x_key=np.array(
   )
 x_key
 
-x_0 = args.x
-y_0 = args.y
+x_0 = args.x_0
+y_0 = args.y_0
 K = args.K
 L= args.L
 
