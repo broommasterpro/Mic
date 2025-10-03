@@ -5,7 +5,7 @@ Cryptanalyzing image encryption scheme using chaotic logistic map
 
 Create a Python virtual environment 
 ```
-python -m venv nenv 
+python -m venv venv 
 ```
 
 
