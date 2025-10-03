@@ -10,7 +10,7 @@ parser.add_argument('-K', '--K', type= float, required=True, help= 'K value(shou
 parser.add_argument('-L', '--L', type= int, required=True,  help= 'L value(should be between 11 and 1100')
 parser.add_argument('-i', '--image', type= str, required=True,  help= 'Image path')
 args= parser.parse_args()
-image_path = args.i
+image_path = args.image
 
 png_image = Image.open(image_path)
 png_image.save('output_image.bmp')
