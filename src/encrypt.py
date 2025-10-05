@@ -133,8 +133,7 @@ img.save("CKS.bmp")
 
 confusion_matrix = np.zeros((M, N, 3), dtype=np.uint8)
 
-for k in range(M*N - 1):with open("student.dat", "wb") as f:
-    pickle.dump(s1, f)
+for k in range(M*N - 1):
   i = k//N
   j = (k%N)
   confusion_matrix[i,j,0] = arr[i, j, 0] ^ XKey_img[i, j, 0]
