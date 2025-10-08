@@ -1,6 +1,5 @@
 from PIL import Image
 import numpy as np
-import sys
 import argparse
 import pickle
 
@@ -11,6 +10,16 @@ parser.add_argument('-K', '--K', type= float, required=True, help= 'K value(shou
 parser.add_argument('-L', '--L', type= int, required=True,  help= 'L value(should be between 11 and 1100')
 parser.add_argument('-i', '--image', type= str, required=True,  help= 'Image path')
 args= parser.parse_args()
+
+if args.K <= 18:
+    raise ValueError("K should be greater than 18")
+if args.L < 11 or args.L > 1100:
+    raise ValueError("L should be between 11 and 1100")
+if args.x < 0 or args.x > 2*np.pi:
+    raise ValueError("x should be between 0 and 2pi")
+if args.y < 0 or args.y > 2*np.pi:
+    raise ValueError("y should be between 0 and 2pi")
+
 image_path = args.image
 
 png_image = Image.open(image_path)
