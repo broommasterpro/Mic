@@ -19,17 +19,17 @@ It also illustrates how, when implemented digitally, the stable distribution of 
 
 | Original | Encrypted |
 |:-----------:|:--------:|
-| ![Original](assets/sample.png) | ![Encrypted](assets/encrypted_img.png) |
+| ![Original](assets/sample.webp) | ![Encrypted](assets/encrypted_img.webp) |
 
 
 
 |X_key generation | CKS generation | Confusion 1 |
 |:---------:|:------------:|:---------:|
-| ![1](assets/1.bmp) | ![2](assets/2.bmp) | ![3](assets/3.bmp) |
+| ![1](assets/1.webp) | ![2](assets/2.webp) | ![3](assets/3.webp) |
 
 | Diffusion 1 | Diffusion 2 | Confusion 2 |
 |:--------------------:|:---------------------:|:----------------:|
-| ![4](assets/4.bmp) | ![5](assets/5.bmp) | ![6](assets/6.bmp) |
+| ![4](assets/4.webp) | ![5](assets/5.webp) | ![6](assets/6.webp) |
 
 
 
