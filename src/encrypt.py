@@ -36,7 +36,6 @@ x_key=np.array(
         args.L%256
     ]
   )
-x_key
 
 x_0 = args.x_0
 y_0 = args.y_0
@@ -86,7 +85,6 @@ for i in range(1, M*N):
   chaotic_states[i, 0]=x_0_dash_new
   chaotic_states[i, 1]=y_0_dash_new
 
-chaotic_states
 
 def logistic_map(x_arg):
   return 4*x_arg*(1-x_arg)
@@ -103,7 +101,6 @@ logistic_states[0]=z_0_dash
 for i in range(1, M*N):
   logistic_states[i] = logistic_map(logistic_states[i-1])
 
-logistic_states
 
 CKS = np.zeros((M, N, 3), dtype=np.uint8)
 
