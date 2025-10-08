@@ -15,9 +15,9 @@ if args.K <= 18:
     raise ValueError("K should be greater than 18")
 if args.L < 11 or args.L > 1100:
     raise ValueError("L should be between 11 and 1100")
-if args.x < 0 or args.x > 2*np.pi:
+if args.x_0 < 0 or args.x_0 > 2*np.pi:
     raise ValueError("x should be between 0 and 2pi")
-if args.y < 0 or args.y > 2*np.pi:
+if args.y_0 < 0 or args.y_0 > 2*np.pi:
     raise ValueError("y should be between 0 and 2pi")
 
 image_path = args.image
