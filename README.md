@@ -1,7 +1,7 @@
 # Image encryption using chaotic and logistic maps
 This project implements an image encryption scheme using the chaotic logistic map, inspired by research on how simple nonlinear dynamical equations can produce complex, unpredictable behavior.
 
-It also illustrates how, when implemented digitally, the stable distribution of chaotic states can lead to potential weaknesses — providing insight into both the power and pitfalls of chaos-based cryptography.
+It also illustrates how, when implemented digitally, the stable distribution of chaotic states can lead to potential weaknesses, providing insight into both the power and pitfalls of chaos-based cryptography.
 
 ### Overview
 - Uses the logistic map to generate chaotic sequences.
@@ -47,7 +47,12 @@ Encrypt an image:
 ```
 python src/encrypt.py -i /path/to/img -x float(0 to 2pi) -y float(0 to 2pi) -K float(>18) -L int(11<L<1100)
 ```
+This will generate all the 6 steps and the final encrypted image and also generate secret.key file.
 
+
+
+To decrypt an image, you need the secret.key file generated during encryption. 
+Place the secret.key file in the same directory as the encrypted image.
 Decrypt an image:
 ```
 python src/decrypt.py /path/to/img
