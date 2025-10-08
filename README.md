@@ -19,7 +19,7 @@ It also illustrates how, when implemented digitally, the stable distribution of 
 
 | Original | Encrypted |
 |:-----------:|:--------:|
-| !(Original)[assets/sample.png] | !()[assets/encrypted_img.png] |
+| ![Original](assets/sample.png) | ![Encrypted](assets/encrypted_img.png) |
 
 
 
