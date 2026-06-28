@@ -1,4 +1,6 @@
-# Image encryption using chaotic and logistic maps
+# Mic
+Mic stands for 'make it chaotic' because chaos is necessary in life.
+
 This project implements an image encryption scheme using the chaotic logistic map, inspired by research on how simple nonlinear dynamical equations can produce complex, unpredictable behavior.
 
 It also illustrates how, when implemented digitally, the stable distribution of chaotic states can lead to potential weaknesses, providing insight into both the power and pitfalls of chaos-based cryptography.
